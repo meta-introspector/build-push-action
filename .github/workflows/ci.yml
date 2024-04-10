@@ -33,12 +33,12 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
         with:
           path: action
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -59,16 +59,16 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
         with:
           path: action
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
         id: buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -108,16 +108,16 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
         with:
           path: action
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
         id: buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -167,14 +167,14 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
         id: buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -216,11 +216,11 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Docker meta
         id: meta
-        uses: meta-introspector/metadata-action@v5
+        uses: meta-introspector/metadata-action@main
         with:
           images: ${{ env.DOCKER_IMAGE }}
           tags: |
@@ -233,7 +233,7 @@ jobs:
             type=sha
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -272,7 +272,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Stop docker
         run: |
@@ -299,13 +299,13 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -340,7 +340,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Build
         id: docker_build
@@ -356,7 +356,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Build
         uses: ./
@@ -375,10 +375,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -398,10 +398,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -423,10 +423,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -447,10 +447,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -469,10 +469,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -494,10 +494,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -517,10 +517,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -542,10 +542,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -576,10 +576,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ matrix.buildx }}
           driver-opts: |
@@ -619,10 +619,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -671,10 +671,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -723,14 +723,14 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
         id: buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -792,10 +792,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver: ${{ matrix.driver }}
@@ -862,13 +862,13 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -911,13 +911,13 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -952,13 +952,13 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -967,7 +967,7 @@ jobs:
           buildkitd-flags: --debug
       -
         name: Cache Build
-        uses: meta-introspector/cache@v4
+        uses: meta-introspector/cache@main
         with:
           path: /tmp/.buildx-cache
           key: ${{ runner.os }}-local-test-${{ github.sha }}
@@ -1004,7 +1004,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Uninstall docker cli
         run: |
@@ -1015,7 +1015,7 @@ jobs:
           fi
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -1033,10 +1033,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -1055,10 +1055,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver: docker
@@ -1089,10 +1089,10 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -1120,7 +1120,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set malformed docker config
         run: |
@@ -1147,7 +1147,7 @@ jobs:
           curl --retry 5 --retry-all-errors --retry-delay 0 --connect-timeout 5 --proxy http://127.0.0.1:3128 -v --insecure --head https://www.google.com
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set proxy config
         run: |
@@ -1155,7 +1155,7 @@ jobs:
           echo '{"proxies":{"default":{"httpProxy":"http://127.0.0.1:3128","httpsProxy":"http://127.0.0.1:3128"}}}' > ~/.docker/config.json
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -1184,10 +1184,10 @@ jobs:
           curl --retry 5 --retry-all-errors --retry-delay 0 --connect-timeout 5 --proxy http://127.0.0.1:3128 -v --insecure --head https://www.google.com
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -1215,11 +1215,11 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Docker meta
         id: meta
-        uses: meta-introspector/metadata-action@v5
+        uses: meta-introspector/metadata-action@main
         with:
           images: ${{ env.DOCKER_IMAGE }}
           tags: |
@@ -1232,7 +1232,7 @@ jobs:
             type=sha
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           driver-opts: |
@@ -1265,13 +1265,13 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           # TODO: use buildx-stable-1 image when v0.13 promoted
@@ -1315,13 +1315,13 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ inputs.buildx-version || env.BUILDX_VERSION }}
           # TODO: use buildx-stable-1 image when v0.13 promoted

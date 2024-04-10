@@ -47,7 +47,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Set up env
         if: inputs.type == 'local'
@@ -79,7 +79,7 @@ jobs:
       -
         name: Docker meta
         id: meta
-        uses: meta-introspector/metadata-action@v5
+        uses: meta-introspector/metadata-action@main
         with:
           images: ${{ env.REGISTRY_SLUG || inputs.slug }}
           tags: |
@@ -88,10 +88,10 @@ jobs:
             type=raw,gh-runid-${{ github.run_id }}
       -
         name: Set up QEMU
-        uses: meta-introspector/setup-qemu-action@v3
+        uses: meta-introspector/setup-qemu-action@main
       -
         name: Set up Docker Buildx
-        uses: meta-introspector/setup-buildx-action@v3
+        uses: meta-introspector/setup-buildx-action@main
         with:
           version: ${{ matrix.buildx_version }}
           buildkitd-config: /tmp/buildkitd.toml
@@ -102,7 +102,7 @@ jobs:
       -
         name: Login to Registry
         if: github.event_name != 'pull_request' && (env.REGISTRY_USER || inputs.username_secret) != ''
-        uses: meta-introspector/login-action@v3
+        uses: meta-introspector/login-action@main
         with:
           registry: ${{ env.REGISTRY_FQDN || inputs.registry }}
           username: ${{ env.REGISTRY_USER || secrets[inputs.username_secret] }}

@@ -19,7 +19,7 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Targets matrix
         id: targets
@@ -37,9 +37,9 @@ jobs:
     steps:
       -
         name: Checkout
-        uses: meta-introspector/checkout@v4
+        uses: meta-introspector/checkout@main
       -
         name: Validate
-        uses: meta-introspector/bake-action@v4
+        uses: meta-introspector/bake-action@main
         with:
           targets: ${{ matrix.target }}
