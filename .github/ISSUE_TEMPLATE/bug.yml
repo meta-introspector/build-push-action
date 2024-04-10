@@ -10,7 +10,7 @@ body:
       value: |
         Thank you for taking the time to report a bug!
         If this is a security issue please report it to the [Docker Security team](mailto:security@docker.com).
-        Before submitting a bug report, check out the [Troubleshooting doc](https://github.com/docker/build-push-action/blob/master/TROUBLESHOOTING.md).
+        Before submitting a bug report, check out the [Troubleshooting doc](https://github.com/meta-introspector/build-push-action/blob/master/TROUBLESHOOTING.md).
 
   - type: checkboxes
     attributes:
@@ -18,7 +18,7 @@ body:
       description: >
         Make sure you've read the contributing guidelines before proceeding.
       options:
-        - label: I've read the [contributing guidelines](https://github.com/docker/build-push-action/blob/master/.github/CONTRIBUTING.md) and wholeheartedly agree
+        - label: I've read the [contributing guidelines](https://github.com/meta-introspector/build-push-action/blob/master/.github/CONTRIBUTING.md) and wholeheartedly agree
           required: true
 
   - type: checkboxes
